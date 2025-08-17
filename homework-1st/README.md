@@ -110,23 +110,23 @@ export default function Button(props) {
 
 ### 컴포넌트 폴더구조
 
-```md
+```jsx
 components
 └──atoms
-└──button
-├──button.css
-└──Button.jsx
+    └──button
+        ├──button.css
+        └──Button.jsx
 └──molecules
-└──figure
-├──figure.css
-└──Figure.jsx
-└──profile
-├──profile.css
-└──Profile.jsx
+    └──figure
+        ├──figure.css
+        └──Figure.jsx
+    └──profile
+        ├──profile.css
+        └──Profile.jsx
 └──organisms
-└──section
-├──section.css
-└──Section.jsx
+    └──section
+        ├──section.css
+        └──Section.jsx
 ```
 
 아토믹 패턴을 사용해 컴포넌트를 분류했습니다.
