@@ -1,14 +1,14 @@
-import react from '@vitejs/plugin-react'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
-import { defineConfig, loadEnv } from 'vite'
-import viteCompression from 'vite-plugin-compression'
+import react from "@vitejs/plugin-react";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { defineConfig, loadEnv } from "vite";
+import viteCompression from "vite-plugin-compression";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), '')
-  const isProduction = mode === 'production'
+  const env = loadEnv(mode, process.cwd(), "");
+  const isProduction = mode === "production";
 
   return {
     plugins: [react(), viteCompression()],
@@ -17,9 +17,9 @@ export default defineConfig(({ mode }) => {
       hmr: !isProduction,
       proxy: !isProduction
         ? {
-            '/api': {
-              target: env.VITE_API_URL || 'http://localhost:4000',
-              rewrite: (path) => path.replace(/^\/api/, ''),
+            "/api": {
+              target: env.VITE_API_URL || "http://localhost:4000",
+              rewrite: (path) => path.replace(/^\/api/, ""),
               changeOrigin: true,
             },
           }
@@ -31,21 +31,21 @@ export default defineConfig(({ mode }) => {
     css: {
       devSourcemap: !isProduction,
       modules: {
-        generateScopedName: '[name]__[local]___[hash:base64:5]',
+        generateScopedName: "[name]__[local]___[hash:base64:5]",
       },
     },
     resolve: {
-      extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+      extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
       alias: {
-        '@': path.resolve(__dirname, 'src'),
-        '@components': path.resolve(__dirname, 'src/components'),
-        '@assets': path.resolve(__dirname, 'src/assets'),
+        "@": path.resolve(__dirname, "src"),
+        "@components": path.resolve(__dirname, "src/components"),
+        "@assets": path.resolve(__dirname, "src/assets"),
       },
     },
     build: {
-      outDir: 'dist',
+      outDir: "dist",
       sourcemap: !isProduction,
-      minify: isProduction ? 'terser' : false,
+      minify: isProduction ? "terser" : false,
       terserOptions: isProduction
         ? {
             compress: {
@@ -62,23 +62,23 @@ export default defineConfig(({ mode }) => {
         output: {
           manualChunks: isProduction
             ? {
-                vendor: ['react', 'react-dom'],
+                vendor: ["react", "react-dom"],
                 router: [],
                 ui: [],
               }
             : {},
-          entryFileNames: 'entries/[name]-[hash].js',
-          chunkFileNames: 'chunks/[name]-[hash].js',
-          assetFileNames: 'assets/[name]-[hash][extname]',
+          entryFileNames: "entries/[name]-[hash].js",
+          chunkFileNames: "chunks/[name]-[hash].js",
+          assetFileNames: "assets/[name]-[hash][extname]",
         },
       },
       treeshake: true,
-      target: 'es2015',
+      target: "es2015",
       reportCompressedSize: isProduction,
     },
-    envPrefix: 'VITE_',
+    envPrefix: "VITE_",
     optimizeDeps: {
-      include: ['react', 'react-dom'],
+      include: ["react", "react-dom"],
     },
-  }
-})
+  };
+});

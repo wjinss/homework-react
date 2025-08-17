@@ -1,27 +1,27 @@
 import "./profile.css";
-import Button from "@/components/atoms/button/button";
-export default function Profile() {
+import Button from "../../atoms/button/button.jsx";
+import Figure from "../figure/Figure.jsx";
+
+export default function Profile(props) {
   return (
     <div className="profile">
-      <figure>
-        <img src="/images/sam-spa.webp" alt="" />
-        <figcaption>
-          <strong>Tobey Maguire</strong>
-          <span>Spider Man</span>
-        </figcaption>
-      </figure>
+      <Figure
+        image={props.image}
+        alt={props.label}
+        actor={props.actor}
+        nickname={props.nickname}
+        heroName={props.heroName}
+      />
       <div className="caption">
         <dl className="characteristic">
           <dt>배우</dt>
-          <dd>토비 맥과이어</dd>
+          <dd>{props.actorkr}</dd>
           <dt>출연작</dt>
-          <dd className="movie-list">
-            스파이더맨, 스파이더맨2, 스파이더맨3, 스파이더맨: 노 웨이 홈
-          </dd>
+          <dd className="movie-list">{props.filmography}</dd>
           <dt>별명</dt>
-          <dd>어둠의 댄서, 불리 맥과이어</dd>
+          <dd>{props.nickname}</dd>
         </dl>
-        <Button />
+        <Button label={props.label} />
       </div>
     </div>
   );

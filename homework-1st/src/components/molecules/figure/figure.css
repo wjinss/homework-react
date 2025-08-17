@@ -1,0 +1,50 @@
+.profile {
+  figure {
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.7) 15%,
+        rgba(0, 0, 0, 0.1)
+      );
+
+      z-index: 100;
+      transition: background-color 0.4s ease-in;
+    }
+
+    img {
+      aspect-ratio: 1 / 1.1;
+      object-fit: cover;
+      transition: scale 0.25s ease-in-out;
+    }
+
+    &:hover {
+      img {
+        scale: 1.05;
+      }
+    }
+  }
+  figcaption {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    color: #fafafa;
+    text-align: center;
+    z-index: 200;
+
+    strong {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    span {
+      display: block;
+      translate: 0 50%;
+    }
+  }
+}

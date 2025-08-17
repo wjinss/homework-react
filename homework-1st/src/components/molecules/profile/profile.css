@@ -1,59 +1,13 @@
 .profile {
-  max-width: 350px;
+  max-width: 300px;
   padding: 15px;
   background: #fafafa;
   border-radius: 30px;
   box-shadow: 2px 2px 20px rgb(0, 0, 0, 0.2);
 
-  figure {
-    position: relative;
-    border-radius: 25px;
-    overflow: hidden;
-
-    &:hover {
-      img {
-        scale: 1.05;
-      }
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.4) 5%,
-        rgba(0, 0, 0, 0.1)
-      );
-      backdrop-filter: blur(4x);
-      z-index: 100;
-    }
-
-    img {
-      aspect-ratio: 1 / 1.1;
-      object-fit: cover;
-      transition: scale 0.25s ease-in-out;
-    }
-  }
-  figcaption {
-    position: absolute;
-    top: 40px;
-    width: 100%;
-    color: #fafafa;
-    text-align: center;
-
-    strong {
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-    span {
-      display: block;
-      translate: 0 50%;
-    }
-  }
-
   .caption {
     position: relative;
+    padding-top: 10px;
 
     .characteristic {
       font-size: 16px;
@@ -67,23 +21,7 @@
         font-size: 14px;
       }
       .movie-list {
-        width: 50%;
         word-break: keep-all;
-      }
-    }
-
-    button {
-      position: absolute;
-      top: 10px;
-      right: 0;
-      padding: 10px 30px;
-      border-radius: 10px;
-      background: #d40000;
-      color: #fafafa;
-      transition: background 0.2s ease-in-out;
-
-      &:hover {
-        background: #ee0000;
       }
     }
   }

@@ -2,3 +2,18 @@ button {
   border: none;
   box-sizing: border-box;
 }
+
+.profile-button {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  padding: 10px 30px;
+  border-radius: 10px;
+  background: #d40000;
+  color: #fafafa;
+  transition: background 0.2s ease-in-out;
+
+  &:hover {
+    background: #ee0000;
+  }
+}
