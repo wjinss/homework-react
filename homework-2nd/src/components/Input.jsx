@@ -8,7 +8,7 @@ export default function Input({ type, id, placeholder, label, className }) {
 
   const handleshowPassword = () => {
     setIsPasswordHide(!isPasswordHide)
-    isPasswordHide  ? setInputType('text') : setInputType('password') 
+    isPasswordHide ? setInputType('text') : setInputType('password') 
   }
 
   return (
