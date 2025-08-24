@@ -4,7 +4,7 @@ import Button from "./Button";
 import SIGNUP_DATA from "../data/signIn.json"
 import './signin.css'
 
-export default function SignUpForm() { 
+export default function SignUpForm({ formClassName, formButtonClassName}) { 
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -38,7 +38,7 @@ export default function SignUpForm() {
 
 
   return (
-    <form className="sign-in-form">
+    <form className={formClassName}>
       {SIGNUP_DATA.map(item => (
         <Input {...item}
           key={item.id}
@@ -47,8 +47,9 @@ export default function SignUpForm() {
           errorMessage={formErrors[item.id]}
         />
       ))}
-      <Button type={'submit'} className={'signUpButton'}>회원가입</Button>
 
+      <Button type={'submit'} className={formButtonClassName}>회원가입</Button>
     </form>
   )
 }
+
