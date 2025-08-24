@@ -1,0 +1,16 @@
+[
+    {
+    "id":"signUpEmail",
+    "type": "email",
+    "label":"이메일",
+    "placeholder":"user@company.io",
+    "className": "signInInput"
+  },
+    {
+    "id":"signUpPW",
+    "type": "password",
+    "label":"패스워드",
+    "placeholder":"숫자, 영문 조합 6자리 이상 입력",
+    "className": "signInInput"
+  }
+]
