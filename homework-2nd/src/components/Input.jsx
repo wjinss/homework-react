@@ -8,16 +8,14 @@ export default function Input({ type, id, placeholder, label }) {
 
   const handleshowPassword = () => {
     setIsPasswordHide(!isPasswordHide)
-    !isPasswordHide ? setInputType('password') : setInputType('number') 
+    isPasswordHide  ? setInputType('text') : setInputType('password') 
   }
 
-  
-  
   return (
     <>
       <label htmlFor={id}>{label}</label>
       <input type={inputType} id={id} name={id} placeholder={placeholder} />
-      {type === 'password' && <Button type={"button"} onClick={handleshowPassword} ><img src={showPassword} alt="" /></ Button >}
+      {type === 'password' && <Button type={"button"} ariaLabel={inputType === 'password' ? "비밀번호 보기" : "비밀번호 숨기기" } onClick={handleshowPassword} ><img src={showPassword} alt="" role="none" /></ Button >}
     </>
   )
 }
