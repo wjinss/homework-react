@@ -19,7 +19,7 @@ export default defineConfig([
     plugins: { js },
 
     // 규칙 확장: js 추천 규칙 세트 적용
-    extends: ['js/recommended'],
+    extends: ['js/recommended', 'eslint-config-prettier'],
 
     settings: {
       // React 버전 자동 감지 후 관련 규칙 적용
