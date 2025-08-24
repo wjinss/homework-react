@@ -1,6 +1,6 @@
-# 리액트 1주차 과제
+# 리액트 2주차 과제
 
-## stateless 컴포넌트 구현
+## statefull 컴포넌트 구현 및 상태 끌어올리기
 
 결과물
 ![](https://velog.velcdn.com/images/wjinss/post/497d15a0-248f-4d2f-aa00-67135efa27c5/image.png)
@@ -14,7 +14,7 @@
 - signIn.json에서 데이터를 불러와 컴포넌트에 값을 할당
 - useState를 사용해서 폼에 입력된 값과 정규표현식에 맞지 않는 에러를 상태로 저장,
 - onChange로 input에 입력되는 값을 정규표현식으로 검사 후 formData와 formErrors 상태 업데이트
-- signIn.json에 저장된 값을 토대로 <Input/> 컴포넌트 리스트 렌더링 및 value, onChange, errorMessage는 상태에서 값을 할당
+- signIn.json에 저장된 값을 토대로 `<Input/>` 컴포넌트 리스트 렌더링 및 value, onChange, errorMessage는 상태에서 값을 할당
 - 리팩토링시 상태와 이벤트 핸들러를 utils로 분류 후 SignUpForm, SignInForm 컴포넌트에서 재사용 할 수 있도록 만들어 볼 예정
 
 ```jsx
@@ -78,8 +78,8 @@ export default function SignUpForm({ formClassName, formButtonClassName}) {
 
 - 비밀번호 보기 버튼과 인풋의 타입을 상태를 지정
 - handleshowPassword 이벤트 핸들러로 클릭 시 버튼의 타입이 토글되게 함수 지정
-- input의 타입이 'password'일 경우 <Button /> 컴포넌트 조건부 렌더링, 저장된 상태에 따라 타입이 변경(토글)
-- props로 전달받은 errorMessage 상태가 있으면 에러메세지를 보여주는 <p>요소 조건부 렌더링
+- input의 타입이 'password'일 경우 `<Button />` 컴포넌트 조건부 렌더링, 저장된 상태에 따라 타입이 변경(토글)
+- props로 전달받은 errorMessage 상태가 있으면 에러메세지를 보여주는 `<p>`요소 조건부 렌더링
 - 리팩토링시 Input을 더 잘게 쪼개고, 현 컴포넌트는 molecule 단위로 다시 만들어 볼 예정
 
 ```jsx
