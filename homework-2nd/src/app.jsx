@@ -1,10 +1,10 @@
-import { LearnSection } from '@/components'
-import RandomCountUp from '@/demo/app'
+import SignUpForm from './components/SignUpForm'
 
 export default function App() {
   return (
-    <LearnSection title="랜덤 카운트 업">
-      <RandomCountUp />
-    </LearnSection>
+    <section className='bg-gray-200 w-100vw h-dvh'>
+      <SignUpForm />
+    </section>
+    
   )
 }
