@@ -2,7 +2,6 @@ import { useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
 import SIGNUP_DATA from "../data/signUp.json"
-import './signin.css'
 
 export default function SignInForm({ formClassName, formButtonClassName}) { 
   const [formData, setFormData] = useState({
