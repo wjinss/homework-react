@@ -19,7 +19,7 @@ export default function NavLink({ user, item }: Props) {
 
   return (
     <Link
-      to={`/?page=${path}`} // 페이지 연결
+      to={path} // 페이지 연결
       onClick={(e) => {
         // 인증, 유저 객체 있을때만 페이지 이동
         if (authRequired && !user) {

@@ -1,9 +1,10 @@
 import { User } from '@supabase/supabase-js'
 import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import type { JSX } from 'react/jsx-runtime'
 import { toast } from 'sonner'
 import Navigation, { type Page } from './components/navigation'
-import usePageQuery from './hooks/use-query'
+// import usePageQuery from './hooks/use-query'
 import supabase, { type ProfilePartial } from './libs/supabase'
 import EditProfilePage from './pages/editProfile'
 import ProfilePage from './pages/profile'
@@ -19,7 +20,7 @@ const getUser = async (user: User) => {
 }
 
 export default function AppPage() {
-  const page = usePageQuery<Page>('signup') // page값 읽어오기
+  // const page = usePageQuery<Page>('signup') // page값 읽어오기
   const [user, setUser] = useState<ProfilePartial | null>(null) // 사용자 상태 : 프로필 정보 or null
 
   useEffect(() => {
@@ -71,20 +72,22 @@ export default function AppPage() {
     }
   }, [])
 
+  const location = useLocation()
+  const path = location.pathname
   let renderPage: JSX.Element | null = null
 
   // 현재 페이지 값에 따라 동적 렌더링
-  switch (page.data) {
-    case 'signin':
+  switch (path) {
+    case '/signin':
       renderPage = <SignInPage />
       break
-    case 'signup':
+    case '/signup':
       renderPage = <SignUpPage />
       break
-    case 'profile':
+    case '/profile':
       renderPage = <ProfilePage user={user} />
       break
-    case 'editProfile':
+    case '/editProfile':
       renderPage = <EditProfilePage user={user} />
       break
   }
