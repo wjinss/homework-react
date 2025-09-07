@@ -67,7 +67,6 @@ export default function AppPage() {
     })
 
     return () => {
-      // [실습] Supabase 인증 구독 해제
       subscription.unsubscribe()
     }
   }, [])
